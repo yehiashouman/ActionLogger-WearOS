@@ -1,0 +1,24 @@
+Action Logger project validation
+================================
+
+Result: PASS
+
+Validated:
+- AndroidManifest.xml and launcher vector parse as XML.
+- Kotlin source has no syntax diagnostics detectable by the local Kotlin parser.
+- Accelerometer, gyroscope and rotation-vector collection paths exist.
+- Raw sensor timestamps and accuracy are retained.
+- Sensor batching is configured.
+- Foreground service + screen-off recording wake lock are present.
+- Sensors are active only for recording sessions.
+- 15/25/50 Hz sampling modes are implemented; 25 Hz is default.
+- Auto-stop and <=7% non-charging battery stop are implemented.
+- Custom actions, subject IDs, wrist labels and notes are implemented.
+- Storage is ActionLogger/<action_slug>/<session_id>/ inside exported datasets.
+- metadata.json, sensor_events.csv and markers.csv are generated per session.
+- Process interruption recovery is implemented.
+- Dataset ZIP manifest is generated.
+- Dataset validator was exercised against a representative sample session and passed.
+
+Limitation:
+This execution environment does not contain the Android SDK or Gradle runtime, so a full Android APK compilation, emulator run and physical Galaxy Watch 9 instrumentation test were not possible here. Perform those checks in Android Studio before distribution.
